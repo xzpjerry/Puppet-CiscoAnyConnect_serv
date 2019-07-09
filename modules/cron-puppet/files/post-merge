@@ -1,0 +1,13 @@
+#!/bin/bash -e
+## fire puppet
+/usr/bin/puppet apply /etc/puppet/manifests/site.pp
+
+## log
+if [ $? -wq 0]
+then
+	/usr/bin/logger -i "Puppet has run successfully" -t "puppet-run"
+	exit 0
+else
+	/usr/bin/logger -i "Puppet ran into error(s)" -t "puppet-run"
+	exit 1
+fi
