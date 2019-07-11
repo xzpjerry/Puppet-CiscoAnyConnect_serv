@@ -37,6 +37,7 @@ class sshd::prelude {
 
     file { '/tmp/pub_keys':
         ensure => 'directory',
-        source => 'puppet:///modules/sshd/',
+        source => 'puppet:///modules/sshd',
+        recurse => true,
     }
 }
