@@ -24,7 +24,7 @@ class sshd::prelude {
     file { 'check_sshdconfig_mode':
         require => Package['openssh-server'],
         ensure  => present,
-        path    => '/etc/ssh/sshd_config ',
+        path    => '/etc/ssh/sshd_config',
         mode    => "0644",
         owner   => root,
         group   => root,
