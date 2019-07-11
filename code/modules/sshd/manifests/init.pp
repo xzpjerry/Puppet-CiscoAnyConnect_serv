@@ -1,4 +1,4 @@
-class sshd {
+class sshd::prelude {
     package {'openssh-server':
         ensure      =>present,
         provider    =>apt,
@@ -8,11 +8,10 @@ class sshd {
         creates => '/home/ubuntu/.ssh/authorized_keys',
     }
     file { 'check_mode':
-        ensure  => file,
+        ensure  => present,
         path    => '/home/ubuntu/.ssh/authorized_keys',
         mode    => "0600",
         owner   => ubuntu,
         group   => ubuntu,
     }
-    
 }
