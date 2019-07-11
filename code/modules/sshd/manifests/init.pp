@@ -1,3 +1,5 @@
 class sshd {
-	contain sshd::prelude	
+	contain sshd::prelude
+
+	Class['sshd::prelude']
 }
