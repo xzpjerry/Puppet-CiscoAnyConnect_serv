@@ -5,10 +5,9 @@ class sshd::prelude {
     }
     service { 'sshd':
       ensure => running,
+      enable => true,
       require => [
         Package['openssh-server'],
-      ],
-      subscribe => [
         File['/etc/ssh/sshd_config'],
       ],
     }
@@ -19,8 +18,9 @@ class sshd::prelude {
     }
     file { '/etc/ssh/sshd_config':
         require => Exec['restore_sshdconfig_if_not_existing'],
+        notify  => Service['sshd'],
         ensure  => present,
-        mode    => "0644",
+        mode    => "0600",
         owner   => root,
         group   => root,
     }
