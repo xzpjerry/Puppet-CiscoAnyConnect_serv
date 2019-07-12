@@ -1,14 +1,16 @@
 class sshd::prelude {
     package {'openssh-server':
-        ensure      =>present,
-        provider    =>apt,
+        ensure => present,
+        provider => apt,
     }
     service { 'sshd':
-      ensure    => running,
+      ensure => running,
       require => [
         Package['openssh-server'],
+      ],
+      subscribe => [
         File['/etc/ssh/sshd_config'],
-      ]
+      ],
     }
     exec { 'restore_sshdconfig_if_not_existing':
         require => Package['openssh-server'],
