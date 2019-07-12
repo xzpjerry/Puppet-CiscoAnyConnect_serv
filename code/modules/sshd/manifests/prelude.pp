@@ -12,7 +12,7 @@ class sshd::prelude {
       ],
     }
     exec { 'reload_sshd_service':
-        command => 'service sshd restart',
+        command => '/etc/init.d/ssh restart',
         refreshonly => true,
         logoutput => true,
     }
