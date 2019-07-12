@@ -11,7 +11,7 @@ class sshd::prelude {
         File['/etc/ssh/sshd_config'],
       ],
     }
-    exec { 'reload_sshd_service',
+    exec { 'reload_sshd_service':
         command => 'service sshd restart',
         refreshonly => true,
         logoutput => true,
