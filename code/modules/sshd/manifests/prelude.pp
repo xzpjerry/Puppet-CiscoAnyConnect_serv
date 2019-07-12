@@ -34,10 +34,4 @@ class sshd::prelude {
         owner   => ubuntu,
         group   => ubuntu,
     }
-
-    file { '/tmp/pub_keys':
-        ensure => 'directory',
-        source => 'puppet:///modules/sshd',
-        recurse => true,
-    }
 }
