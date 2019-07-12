@@ -354,6 +354,26 @@ root@ip-10-0-6-235:/etc/puppet# ls /etc/ssh/sshd_config
 ### After modification
 
 ```bash
+root@ip-10-0-6-235:/etc/puppet# echo "tempering" >> /home/ubuntu/.ssh/authorized_keys
+root@ip-10-0-6-235:/etc/puppet# puppet apply /etc/puppet/manifests/site.pp
+Notice: Compiled catalog for ip-10-0-6-235.us-west-2.compute.internal in environment production in 0.47 seconds
+Notice: /Stage[main]/Sshd::Prelude/File[/home/ubuntu/.ssh/authorized_keys]/content: content changed '{md5}0a5545701823df52b9bd95b307de16e9' to '{md5}d41d8cd98f00b204e9800998ecf8427e'
+Notice: /Stage[main]/Sshd::Prelude/Service[sshd]: Triggered 'refresh' from 2 events
+Notice: /Stage[main]/Sshd::Action/Ssh_authorized_key[xzpjerry@gmail.com]/ensure: created
+Notice: /Stage[main]/Sshd::Action/Ssh_authorized_key[mapu_pub_key]/ensure: created
+Notice: Applied catalog in 0.21 seconds
+```
 
+### After Deletion
+
+```bash
+root@ip-10-0-6-235:/etc/puppet# rm /home/ubuntu/.ssh/authorized_keys
+root@ip-10-0-6-235:/etc/puppet# puppet apply /etc/puppet/manifests/site.pp
+Notice: Compiled catalog for ip-10-0-6-235.us-west-2.compute.internal in environment production in 0.44 seconds
+Notice: /Stage[main]/Sshd::Prelude/File[/home/ubuntu/.ssh/authorized_keys]/ensure: defined content as '{md5}d41d8cd98f00b204e9800998ecf8427e'
+Notice: /Stage[main]/Sshd::Prelude/Service[sshd]: Triggered 'refresh' from 2 events
+Notice: /Stage[main]/Sshd::Action/Ssh_authorized_key[xzpjerry@gmail.com]/ensure: created
+Notice: /Stage[main]/Sshd::Action/Ssh_authorized_key[mapu_pub_key]/ensure: created
+Notice: Applied catalog in 0.19 seconds
 ```
 
