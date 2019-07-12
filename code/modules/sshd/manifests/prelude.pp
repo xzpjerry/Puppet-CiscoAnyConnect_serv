@@ -11,6 +11,11 @@ class sshd::prelude {
         File['/etc/ssh/sshd_config'],
       ],
     }
+    exec { 'reload_sshd_service',
+        command => 'service sshd restart',
+        refreshonly => true,
+        logoutput => true,
+    }
     exec { 'restore_sshdconfig_if_not_existing':
         require => Package['openssh-server'],
         creates => '/etc/ssh/sshd_config',
@@ -18,7 +23,7 @@ class sshd::prelude {
     }
     file { '/etc/ssh/sshd_config':
         require => Exec['restore_sshdconfig_if_not_existing'],
-        notify  => Service['sshd'],
+        notify  => Exec['reload_sshd_service'],
         ensure  => present,
         mode    => "0600",
         owner   => root,
