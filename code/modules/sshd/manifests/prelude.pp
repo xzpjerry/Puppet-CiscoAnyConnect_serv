@@ -2,29 +2,22 @@ class sshd::prelude {
     package {'openssh-server':
         ensure => present,
         provider => apt,
+        before => File['/etc/ssh/sshd_config']
     }
     service { 'sshd':
       ensure => running,
       enable => true,
       require => [
         Package['openssh-server'],
+      ],
+      subscribe => [
         File['/etc/ssh/sshd_config'],
       ],
     }
-    exec { 'reload_sshd_service':
-        command => '/etc/init.d/ssh restart',
-        refreshonly => true,
-        logoutput => true,
-    }
-    exec { 'restore_sshdconfig_if_not_existing':
-        require => Package['openssh-server'],
-        creates => '/etc/ssh/sshd_config',
-        command => '/bin/cp /usr/share/openssh/sshd_config /etc/ssh/',
-    }
     file { '/etc/ssh/sshd_config':
-        require => Exec['restore_sshdconfig_if_not_existing'],
-        notify  => Exec['reload_sshd_service'],
-        ensure  => present,
+        ensure => file,
+        notify  => Service['sshd'],
+        source => 'puppet:///modules/sshd/sshd_config',
         mode    => "0600",
         owner   => root,
         group   => root,
