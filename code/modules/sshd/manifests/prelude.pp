@@ -26,12 +26,5 @@ class sshd::prelude {
         owner   => root,
         group   => root,
     }
-    file { '/home/ubuntu/.ssh/authorized_keys':
-        ensure  => file,
-        notify  => Service['sshd'],
-        source  => 'puppet:///modules/sshd/authorized_keys',
-        mode    => "0600",
-        owner   => ubuntu,
-        group   => ubuntu,
-    }
+  
 }
