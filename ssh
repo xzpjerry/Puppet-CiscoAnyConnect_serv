@@ -1,0 +1,56 @@
+Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||/ Name                                       Version                                            Architecture Description
++++-==========================================-==================================================-============-===============================================================================
+ii  accountsservice                            0.6.45-1ubuntu1                                    amd64        query and manipulate user account information
+ii  acl                                        2.2.52-3build1                                     amd64        Access control list utilities
+ii  acpi-support                               0.142                                              amd64        scripts for handling many ACPI events
+ii  acpid                                      1:2.0.28-1ubuntu1                                  amd64        Advanced Configuration and Power Interface event daemon
+ii  adduser                                    3.117ubuntu1                                       all          add and remove users and groups
+ii  adwaita-icon-theme                         3.30.0-0ubuntu1                                    all          default icon theme of GNOME (small subset)
+ii  aisleriot                                  1:3.22.6-1                                         amd64        GNOME solitaire card game collection
+ii  alsa-base                                  1.0.25+dfsg-0ubuntu5                               all          ALSA driver configuration files
+ii  alsa-utils                                 1.1.6-1ubuntu1                                     amd64        Utilities for configuring and using ALSA
+ii  amd64-microcode                            3.20180524.1ubuntu1                                amd64        Processor microcode firmware for AMD CPUs
+ii  anacron                                    2.3-24                                             amd64        cron-like program that doesn't go by time
+ii  apache2                                    2.4.34-1ubuntu2.1                                  amd64        Apache HTTP Server
+ii  apache2-bin                                2.4.34-1ubuntu2.1                                  amd64        Apache HTTP Server (modules and other binary files)
+ii  apache2-data                               2.4.34-1ubuntu2.1                                  all          Apache HTTP Server (common files)
+ii  apache2-utils                              2.4.34-1ubuntu2.1                                  amd64        Apache HTTP Server (utility programs for web servers)
+ii  apg                                        2.2.3.dfsg.1-5                                     amd64        Automated Password Generator - Standalone version
+ii  app-install-data-partner                   16.04                                              all          Application Installer (data files for partner applications/repositories)
+ii  apparmor                                   2.12-4ubuntu8                                      amd64        user-space parser utility for AppArmor
+ii  apport                                     2.20.10-0ubuntu13.4                                all          automatically generate crash reports for debugging
+ii  apport-gtk                                 2.20.10-0ubuntu13.4                                all          GTK+ frontend for the apport crash report system
+ii  apport-symptoms                            0.20                                               all          symptom scripts for apport
+ii  appstream                                  0.12.2-2                                           amd64        Software component metadata management
+ii  apt                                        1.7.5                                              amd64        commandline package manager
+ii  apt-config-icons                           0.12.2-2                                           all          APT configuration snippet to enable icon downloads
+ii  apt-utils                                  1.7.5                                              amd64        package management related utility programs
+ii  aptdaemon                                  1.1.1+bzr982-0ubuntu20                             all          transaction based package management service
+ii  aptdaemon-data                             1.1.1+bzr982-0ubuntu20                             all          data files for clients
+ii  apturl                                     0.5.2ubuntu16                                      amd64        install packages using the apt protocol - GTK+ frontend
+ii  apturl-common                              0.5.2ubuntu16                                      amd64        install packages using the apt protocol - common data
+ii  aspell                                     0.60.7~20110707-5                                  amd64        GNU Aspell spell-checker
+ii  aspell-en                                  2018.04.16-0-1                                     all          English dictionary for GNU Aspell
+ii  at-spi2-core                               2.30.0-2                                           amd64        Assistive Technology Service Provider Interface (dbus core)
+ii  avahi-autoipd                              0.7-4ubuntu2.1                                     amd64        Avahi IPv4LL network address configuration daemon
+ii  avahi-daemon                               0.7-4ubuntu2.1                                     amd64        Avahi mDNS/DNS-SD daemon
+ii  avahi-utils                                0.7-4ubuntu2.1                                     amd64        Avahi browsing, publishing and discovery utilities
+ii  baobab                                     3.30.0-1                                           amd64        GNOME disk usage analyzer
+ii  base-files                                 10.1ubuntu7                                        amd64        Debian base system miscellaneous files
+ii  base-passwd                                3.5.45                                             amd64        Debian base system master password and group files
+ii  bash                                       4.4.18-2ubuntu3                                    amd64        GNU Bourne Again SHell
+ii  bash-completion                            1:2.8-1ubuntu1                                     all          programmable completion for the bash shell
+ii  bc                                         1.07.1-2                                           amd64        GNU bc arbitrary precision calculator language
+ii  bind9-host                                 1:9.11.4+dfsg-3ubuntu5.4                           amd64        DNS lookup utility (deprecated)
+ii  binfmt-support                             2.1.8-2                                            amd64        Support for extra binary formats
+ii  binutils                                   2.31.1-6ubuntu1.2                                  amd64        GNU assembler, linker and binary utilities
+ii  binutils-common:amd64                      2.31.1-6ubuntu1.2                                  amd64        Common files for the GNU assembler, linker and binary utilities
+ii  binutils-x86-64-linux-gnu                  2.31.1-6ubuntu1.2                                  amd64        GNU binary utilities, for x86-64-linux-gnu target
+ii  bluez                                      5.50-0ubuntu1                                      amd64        Bluetooth tools and daemons
+ii  bluez-cups                                 5.50-0ubuntu1                                      amd64        Bluetooth printer driver for CUPS
+ii  bluez-obexd                                5.50-0ubuntu1                                      amd64        bluez obex daemon
+ii  bolt                                       0.5-1                                              amd64        system daemon to manage thunderbolt 3 devices
+ii  branding-ubuntu                            0.10                                               a
