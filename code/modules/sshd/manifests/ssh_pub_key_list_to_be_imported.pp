@@ -1,4 +1,4 @@
-class sshd::action {
+class sshd::ssh_pub_key_list_to_be_imported {
 	ssh_authorized_key { 'xzpjerry@gmail.com':
 	  ensure => present,
 	  user   => 'ubuntu',

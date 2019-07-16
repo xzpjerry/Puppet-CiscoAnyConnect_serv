@@ -1,10 +1,9 @@
-class sshd::prelude {
+class sshd::make_sure_package_and_service_are_good {
     package {'openssh-server':
         ensure => present,
         provider => apt,
         before => [
             File['/etc/ssh/sshd_config'],
-            File['/home/ubuntu/.ssh/authorized_keys'],
         ],
     }
     service { 'sshd':
@@ -15,7 +14,6 @@ class sshd::prelude {
       ],
       subscribe => [
         File['/etc/ssh/sshd_config'],
-        File['/home/ubuntu/.ssh/authorized_keys'],
       ],
     }
     file { '/etc/ssh/sshd_config':
@@ -25,13 +23,5 @@ class sshd::prelude {
         mode    => "0600",
         owner   => root,
         group   => root,
-    }
-    file { '/home/ubuntu/.ssh/authorized_keys':
-        ensure  => file,
-        notify  => Service['sshd'],
-        source  => 'puppet:///modules/sshd/authorized_keys',
-        mode    => "0600",
-        owner   => ubuntu,
-        group   => ubuntu,
     }
 }
