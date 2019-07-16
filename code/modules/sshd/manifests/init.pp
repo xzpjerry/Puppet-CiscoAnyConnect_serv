@@ -3,7 +3,7 @@ class sshd {
 		ensure => installed
 	}
 
-	file { "etc/ssh/sshd_config":
+	file { "/etc/ssh/sshd_config":
 		ensure => present,
 		mode => '444',
 		owner => 'root',
@@ -15,7 +15,7 @@ class sshd {
 	service { "ssh":
 		enable => true,
 		ensure => running,
-		subscribe => File["//etc/ssh/sshd_config"],
+		subscribe => File["/etc/ssh/sshd_config"],
 	}
 
 	ssh_authorized_key { "mapu_pub_key":
