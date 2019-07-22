@@ -1,4 +1,4 @@
-1. The url for my webpage is: http://ec2-54-244-154-48.us-west-2.compute.amazonaws.com/maxi.html#
+1. The url for my webpage is: http://ec2-54-244-154-48.us-west-2.compute.amazonaws.com/maxi.html# or http://54.244.154.48/maxi.html
 
 2.	-67.189.1.10 - - [22/Jul/2019:04:19:45 +0000] "GET /maxi.html HTTP/1.1" 200 1120 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0"
 	-67.189.1.10 - - [22/Jul/2019:04:22:01 +0000] "GET /maxi.html HTTP/1.1" 200 1123 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0"
@@ -6,7 +6,7 @@
 
 3. Maxi-2026894998.us-west-2.elb.amazonaws.com
 
-4. 
+4. I was not able to test my load balancer because my partner worked seperately  
 
 5. 10.0.6.161 - - [22/Jul/2019:04:33:36 +0000] "GET / HTTP/1.1" 200 11229 "-" "ELB-HealthChecker/1.0"
 10.0.6.88 - - [22/Jul/2019:04:33:51 +0000] "GET / HTTP/1.1" 200 11229 "-" "ELB-HealthChecker/1.0"
@@ -21,5 +21,14 @@
 10.0.6.161 - - [22/Jul/2019:04:35:36 +0000] "GET / HTTP/1.1" 200 11229 "-" "ELB-HealthChecker/1.0"
 10.0.6.88 - - [22/Jul/2019:04:35:51 +0000] "GET / HTTP/1.1" 200 11229 "-" "ELB-HealthChecker/1.0"
 
-6. 
+6. file {"/var/www/html":
+                ensure => directory,
+                recurse => true,
+                mode => '444',
+                owner => 'root',
+                group => 'root',
+                source => "puppet:///modules/apache2/html",
+                require => Package["apache2"],
+        }
+ 
 
