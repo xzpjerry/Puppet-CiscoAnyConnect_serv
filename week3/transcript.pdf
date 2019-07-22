@@ -1,6 +1,0 @@
-1. root@ip-10-0-6-204:/etc/puppet# puppet apply manifests/site.pp
-Notice: Compiled catalog for ip-10-0-6-204.us-west-2.compute.internal in environment production in 0.63 seconds
-Notice: /Stage[main]/Sshd/Package[openssh-server]/ensure: created
-Notice: Applied catalog in 6.05 seconds
-
-
