@@ -18,7 +18,6 @@ class apache2 {
 		mode => '444',
 		owner => 'root',
 		group => 'root',
-		source "puppet:///modules/apache2/html",
 		require => Package["apache2"],
 	}
 
