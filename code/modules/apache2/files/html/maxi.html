@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* Style the header */
+header {
+  background-color: #D291BC;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 30%;
+  height: 600px; 
+  background: #E0BBE4;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #FEC8D8;
+  height: 600px;
+}
+
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+</head>
+
+<header>
+  <h2>What It Do, Babyyy</h2>
+</header>
+
+<section>
+  <nav>
+    <ul>
+	    <li><a >Author: Mapuana Maka</a></li>
+    </ul>
+  </nav>
+  
+  <article>
+    <h1>Master Your Energy</h1>
+    <p>The energy you surround yourself with is important. Be mindful of the what and who you surround yourself with. Not only is it important to surround yourself with the right energy, but you also have to be aware of the energy you carry. </p>
+  </article>
+</section>
+
+
+</body>
+</html>
+
