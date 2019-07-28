@@ -1,5 +1,10 @@
 class user_management::users_to_be_imported {
   $user_key_dict = {
+    'tester2' => 
+      {
+        'key' => "AAAAC3NzaC1lZDI1NTE5AAAAIODqvoJbSR/QHWdDKqUxAWTKAaESy9fId8ibP9ZjJdHY",
+        'key_type' => "ssh-ed25519",
+      },
     'tester' => 
       {
         'key' => "AAAAB3NzaC1yc2EAAAADAQABAAABAQDoy7cOmj6oU22fJ5y4scHtnmJMIGKMPN/NAfqYxDattCLmedvU58+XZFSD0cryftxit/d2k3JHT/bPZwo6KSxahRxEgIkfNkGkYobqaxAB3yHZZBrCVMZJmZfXSVb5RjB+0IBV87SBygZGLeT/mVcRpLSayd3b/E597wBBY72N38zZFFEKHuUyYX0aw9eHXBxpzN93JkT1lkqvcg9jO6ohhXr6nEAH5DuHetWDpLWqLiFawQvEmy3STUApJ0rDECJBkX+xeLOXSnU1IIbO/6/HEPVvR05teUp4CA0aOIPTusfE+YGAaFkH123NNiLhxZX7iTjfZVYR+hQZYUGVKaTN",
