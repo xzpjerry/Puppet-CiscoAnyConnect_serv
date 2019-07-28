@@ -13,10 +13,21 @@ class user_management {
       shell            => $shell,
       expiry           => $expiry,
     }
+    file { "/home/${title}":
+        ensure => directory,
+        before => 
+        mode    => "0755",
+        owner   => $title,
+        group   => $title,
+        after => [
+          User[$title],
+        ],
+    }
     ssh_authorized_key { $title:
       user => $title,
       type => $ssh_key_type,
       key => $ssh_key,
+      after => File["/home/${title}"],
     }
   }
   contain user_management::users_to_be_imported
