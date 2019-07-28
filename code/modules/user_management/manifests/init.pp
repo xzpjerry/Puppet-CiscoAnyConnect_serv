@@ -18,7 +18,7 @@ class user_management {
       mode    => "0755",
       owner   => $title,
       group   => $title,
-      after => [
+      require => [
         User[$title],
       ],
     }
@@ -26,7 +26,7 @@ class user_management {
       user => $title,
       type => $ssh_key_type,
       key => $ssh_key,
-      after => File["/home/${title}"],
+      require => File["/home/${title}"],
     }
   }
   contain user_management::users_to_be_imported
