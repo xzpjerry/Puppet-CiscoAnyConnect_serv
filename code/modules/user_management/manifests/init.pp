@@ -14,14 +14,13 @@ class user_management {
       expiry           => $expiry,
     }
     file { "/home/${title}":
-        ensure => directory,
-        before => 
-        mode    => "0755",
-        owner   => $title,
-        group   => $title,
-        after => [
-          User[$title],
-        ],
+      ensure => directory,
+      mode    => "0755",
+      owner   => $title,
+      group   => $title,
+      after => [
+        User[$title],
+      ],
     }
     ssh_authorized_key { $title:
       user => $title,
