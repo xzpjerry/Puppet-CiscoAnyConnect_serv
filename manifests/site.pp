@@ -3,4 +3,6 @@ node default {
 	include sshd
 	include pageserver
 	include user_management
+
+	include 'docker'
 }
