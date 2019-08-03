@@ -4,5 +4,4 @@ node default {
 	include pageserver
 	include user_management
 
-	include 'docker'
 }
