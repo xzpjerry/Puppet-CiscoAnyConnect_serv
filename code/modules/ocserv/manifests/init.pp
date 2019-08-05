@@ -16,7 +16,8 @@ class ocserv {
     firewall { '100 allow nat':
         table => 'nat',
         chain => 'POSTROUTING',
-        jump => 'MASQUERADE'
+        proto => 'all',
+        jump => 'MASQUERADE',
     }
 	contain ocserv::make_sure_package_and_service_are_good
 	contain ocserv::vpn_users
