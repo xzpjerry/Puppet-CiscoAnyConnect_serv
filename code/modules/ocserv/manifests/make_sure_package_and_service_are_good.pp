@@ -21,7 +21,7 @@ class ocserv::make_sure_package_and_service_are_good {
     	],
     }
     exec { 'reload sysctl':
-      path => "/sbin/"
+      path => "/sbin/",
       command   => 'sysctl -p',
       provider => shell,
       subscribe => File['/etc/ocserv/ocserv.conf'],
