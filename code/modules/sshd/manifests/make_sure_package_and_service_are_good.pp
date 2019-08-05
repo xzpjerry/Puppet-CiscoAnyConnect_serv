@@ -1,4 +1,11 @@
 class sshd::make_sure_package_and_service_are_good {
+    firewall { '100 allow openssh':
+        chain => 'INPUT',
+        state => ['NEW'],
+        dport => '22',
+        proto => 'tcp',
+        action => 'accept',
+    }
     package {'openssh-server':
         ensure => present,
         provider => apt,
