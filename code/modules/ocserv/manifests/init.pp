@@ -19,8 +19,8 @@ class ocserv {
         jump => 'MASQUERADE'
     }
 	contain ocserv::make_sure_package_and_service_are_good
-	contain ocserv::pass
+	contain ocserv::vpn_users
 
 	Class['ocserv::make_sure_package_and_service_are_good']
-	-> Class['ocserv::pass']
+	-> Class['ocserv::vpn_users']
 }
