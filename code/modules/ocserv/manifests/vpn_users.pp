@@ -7,7 +7,7 @@ class ocserv::vpn_users {
     	ensure => present,
     	managehome => false,
     	comment => 'Puppet managed VPN user',
-    	password => 'somerandompassword',
+    	password => '$1$Sug4n39p$1pozT4fLM0IPAliorVJZG/',
     	groups => ['vpn-users'],
     }
 }
