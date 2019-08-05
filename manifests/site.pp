@@ -1,15 +1,16 @@
-node default {
-	resources { 'firewall':
+resources { 'firewall':
      purge => true,
-   }
-   Firewall {
-     before  => Class['my_fw::post'],
-     require => Class['my_fw::pre'],
-   }
+}
+Firewall {
+ before  => Class['my_fw::post'],
+ require => Class['my_fw::pre'],
+}
 
-   class { ['my_fw::pre', 'my_fw::post']: }
-   class { 'firewall': }
+class { ['my_fw::pre', 'my_fw::post']: }
+class { 'firewall': }
 
+node default {
+	
 	include self_update
 	include sshd
 	include pageserver
