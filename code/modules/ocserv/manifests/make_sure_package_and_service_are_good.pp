@@ -20,6 +20,18 @@ class ocserv::make_sure_package_and_service_are_good {
     		File['/etc/ocserv/ocserv.conf'],
     	],
     }
+    exec { 'reload sysctl':
+      command   => 'sysctl -p',
+      subscribe => File['/etc/ocserv/ocserv.conf'],
+      refreshonly => true,
+    }
+    file { '/etc/sysctl.conf':
+        ensure => file,
+        source => 'puppet:///modules/ocserv/sysctl.conf',
+        mode    => "0664",
+        owner   => root,
+        group   => root,
+    }
     file { '/etc/ocserv/ocserv.conf':
         ensure => file,
         notify  => Service['ocserv'],
