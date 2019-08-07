@@ -4,14 +4,15 @@ class resolvconf {
         provider => apt,
         before => [
             File['/etc/resolvconf/resolv.conf.d/tail'],
+            Service['resolvconf'],
+            Exec['append hostname to hosts'],
         ],
     }
     exec { 'append hostname to hosts':
       path => "/etc/",
       command   => 'echo "127.0.0.1 $HOSTNAME" >> hosts',
       provider => shell,
-      subscribe => Package['resolvconf'],
-      refreshonly => true,
+      onlyif => 'grep -c $HOSTNAME /etc/hosts',
     }
     service {'resolvconf':
         ensure => 'running',

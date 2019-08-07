@@ -6,7 +6,6 @@ class ocserv::make_sure_package_and_service_are_good {
         	File['/etc/ocserv/server-cert.pem'],
     		File['/etc/ocserv/server-key.pem'],
     		File['/etc/ocserv/ocserv.conf'],
-            Exec['reload sysctl'],
         ],
     }
     service {'ocserv':
