@@ -9,7 +9,7 @@ class resolvconf {
     }
     exec { 'append hostname to hosts':
       path => "/etc/",
-      command   => 'echo "127.0.0.1 $HOSTNAME" >> hosts',
+      command   => '/bin/echo "127.0.0.1 $HOSTNAME" >> hosts',
       provider => shell,
       onlyif => '/bin/grep -c $HOSTNAME /etc/hosts',
     }
