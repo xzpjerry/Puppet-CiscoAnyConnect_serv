@@ -6,35 +6,31 @@ class my_fw::pre {
        proto  => 'icmp',
        action => 'accept',
      }
-     firewall { '000 allow 53 lo systemd_resolve input':
+     firewall { '000 allow lo systemd_resolve input':
         chain => 'INPUT',
         iniface => 'lo',
-        proto => 'tcp',
-        dport => 53,
+        proto => 'all',
         destination => '127.0.0.53/32',
         action => 'accept',
     }
-    firewall { '000 allow 53 non-lo systemd_resolve input':
+    firewall { '000 allow non-lo systemd_resolve input':
         chain => 'INPUT',
         iniface => '! lo',
-        proto => 'tcp',
-        dport => 53,
+        proto => 'all',
         destination => '127.0.0.53/32',
         action => 'accept',
     }
-    firewall { '000 allow 53 lo dnsmasq input':
+    firewall { '000 allow lo dnsmasq input':
         chain => 'INPUT',
         iniface => 'lo',
-        proto => 'tcp',
-        dport => 53,
+        proto => 'all',
         destination => '127.0.0.1/32',
         action => 'accept',
     }
-    firewall { '000 allow 53 non-lo dnsmasq input':
+    firewall { '000 allow non-lo dnsmasq input':
         chain => 'INPUT',
         iniface => '! lo',
-        proto => 'tcp',
-        dport => 53,
+        proto => 'all',
         destination => '127.0.0.1/32',
         action => 'accept',
     }
