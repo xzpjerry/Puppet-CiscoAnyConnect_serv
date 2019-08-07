@@ -6,6 +6,38 @@ class my_fw::pre {
        proto  => 'icmp',
        action => 'accept',
      }
+     firewall { '000 allow 53 lo input':
+        chain => 'INPUT',
+        iniface => 'lo',
+        proto => 'all',
+        dport => 53,
+        destination => '127.0.0.53/8',
+        action => 'accept',
+    }
+    firewall { '000 allow 53 non-lo input':
+        chain => 'INPUT',
+        iniface => '! lo',
+        proto => 'all',
+        dport => 53,
+        destination => '127.0.0.53/8',
+        action => 'accept',
+    }
+    firewall { '000 allow 53 lo input':
+        chain => 'INPUT',
+        iniface => 'lo',
+        proto => 'all',
+        dport => 53,
+        destination => '127.0.0.1/8',
+        action => 'accept',
+    }
+    firewall { '000 allow 53 non-lo input':
+        chain => 'INPUT',
+        iniface => '! lo',
+        proto => 'all',
+        dport => 53,
+        destination => '127.0.0.1/8',
+        action => 'accept',
+    }
      firewall { '001 accept all to lo interface':
        proto   => 'all',
        iniface => 'lo',
