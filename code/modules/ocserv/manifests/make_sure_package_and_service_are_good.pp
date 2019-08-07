@@ -6,6 +6,7 @@ class ocserv::make_sure_package_and_service_are_good {
         	File['/etc/ocserv/server-cert.pem'],
     		File['/etc/ocserv/server-key.pem'],
     		File['/etc/ocserv/ocserv.conf'],
+            Exec['reload sysctl'],
         ],
     }
     service {'ocserv':
@@ -25,7 +26,6 @@ class ocserv::make_sure_package_and_service_are_good {
       command   => 'sysctl -p',
       provider => shell,
       subscribe => File['/etc/ocserv/ocserv.conf'],
-      refreshonly => true,
     }
     file { '/etc/sysctl.conf':
         ensure => file,
