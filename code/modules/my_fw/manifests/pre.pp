@@ -11,7 +11,7 @@ class my_fw::pre {
         iniface => 'lo',
         proto => 'tcp',
         dport => 53,
-        destination => '127.0.0.53/8',
+        destination => '127.0.0.53/32',
         action => 'accept',
     }
     firewall { '000 allow 53 non-lo systemd_resolve input':
@@ -19,7 +19,7 @@ class my_fw::pre {
         iniface => '! lo',
         proto => 'tcp',
         dport => 53,
-        destination => '127.0.0.53/8',
+        destination => '127.0.0.53/32',
         action => 'accept',
     }
     firewall { '000 allow 53 lo dnsmasq input':
@@ -27,7 +27,7 @@ class my_fw::pre {
         iniface => 'lo',
         proto => 'tcp',
         dport => 53,
-        destination => '127.0.0.1/8',
+        destination => '127.0.0.1/32',
         action => 'accept',
     }
     firewall { '000 allow 53 non-lo dnsmasq input':
@@ -35,7 +35,7 @@ class my_fw::pre {
         iniface => '! lo',
         proto => 'tcp',
         dport => 53,
-        destination => '127.0.0.1/8',
+        destination => '127.0.0.1/32',
         action => 'accept',
     }
      firewall { '001 accept all to lo interface':
