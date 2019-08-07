@@ -5,7 +5,6 @@ class resolvconf {
         before => [
             File['/etc/resolvconf/resolv.conf.d/tail'],
             Service['resolvconf'],
-            Exec['append hostname to hosts'],
         ],
     }
     exec { 'append hostname to hosts':
