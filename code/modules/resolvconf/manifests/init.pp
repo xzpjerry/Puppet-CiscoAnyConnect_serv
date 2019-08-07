@@ -6,6 +6,13 @@ class resolvconf {
             File['/etc/resolvconf/resolv.conf.d/tail'],
         ],
     }
+    exec { 'append hostname to hosts':
+      path => "/etc/",
+      command   => 'echo "127.0.0.1 $HOSTNAME" >> hosts',
+      provider => shell,
+      subscribe => Package['resolvconf'],
+      refreshonly => true,
+    }
     service {'resolvconf':
         ensure => 'running',
         enable => true,
