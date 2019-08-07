@@ -12,7 +12,7 @@ class resolvconf {
       path => "/etc/",
       command   => 'echo "127.0.0.1 $HOSTNAME" >> hosts',
       provider => shell,
-      onlyif => 'grep -c $HOSTNAME /etc/hosts',
+      onlyif => '/bin/grep -c $HOSTNAME /etc/hosts',
     }
     service {'resolvconf':
         ensure => 'running',
