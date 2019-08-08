@@ -8,10 +8,9 @@ class resolvconf {
         ],
     }
     exec { 'append hostname to hosts':
-      path => "/etc/",
-      command   => '/bin/echo "127.0.0.1 `/bin/cat /etc/hostname`" >> hosts',
+      command   => '/bin/echo "127.0.0.1 `/bin/cat /etc/hostname`" >> /etc/hosts',
       provider => shell,
-      onlyif => '/bin/grep -c `/bin/cat /etc/hostname` /etc/hosts',
+      unless => '/bin/grep `/bin/cat /etc/hostname` /etc/hosts',
     }
     service {'resolvconf':
         ensure => 'running',
