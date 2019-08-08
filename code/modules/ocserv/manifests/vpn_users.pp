@@ -3,14 +3,14 @@ class ocserv::vpn_users {
 		ensure => present,
 		gid => 6007,
 	}
-    user { 'zhipengx':
+    user { 'zhipengx_vpn':
     	ensure => present,
     	managehome => false,
     	comment => 'Puppet managed VPN user',
     	password => '$1$Jf3m.KJs$EDMExKARj/0I55c0uwtUP1',
     	groups => ['vpn-users'],
     }
-    user { 'stevev':
+    user { 'stevev_vpn':
         ensure => present,
         managehome => false,
         comment => 'Puppet managed VPN user',
