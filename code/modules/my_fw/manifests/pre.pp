@@ -2,6 +2,13 @@ class my_fw::pre {
  	  Firewall {
    	    require => undef,
  	  }
+    firewall { '000 allow http':
+        chain => 'INPUT',
+        state => ['NEW'],
+        dport => '80',
+        proto => 'tcp',
+        action => 'accept',
+    }
  	  firewall { '000 accept all icmp':
        proto  => 'icmp',
        action => 'accept',
