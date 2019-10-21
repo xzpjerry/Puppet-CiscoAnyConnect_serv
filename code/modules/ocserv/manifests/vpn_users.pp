@@ -4,7 +4,7 @@ class ocserv::vpn_users {
 		gid => 6007,
 	}
     user { 'zhipengx_vpn':
-    	ensure => absent,
+    	ensure => present,
     	managehome => false,
     	comment => 'Puppet managed VPN user',
     	password => '$1$Jf3m.KJs$EDMExKARj/0I55c0uwtUP1',
